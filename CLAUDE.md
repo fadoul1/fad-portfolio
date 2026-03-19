@@ -34,6 +34,18 @@ This is a **Docusaurus 3.x** static site (portfolio/documentation) using TypeScr
 - `src/components/` — Shared React components
 - Component styles use CSS Modules (`*.module.css`)
 
+**Portfolio pages** (all in `src/pages/`):
+- `index.tsx` — Homepage with hero, highlights, CTA
+- `about.tsx` — Story, values, interests
+- `projects.tsx` — Project cards with tech stack tags
+- `experience.tsx` — Timeline of roles, education, certifications
+- `skills.tsx` — Skill bars by category, tools list
+- `contact.tsx` — Contact links and availability status
+
+Each page has a co-located `*.module.css` CSS Module. Shared design tokens (colours, shadows, radii, reusable classes like `.port-card`, `.port-badge`, `.port-tag`) live in `src/css/custom.css`.
+
+**Docs plugin is disabled** (`docs: false` in config). `sidebars.ts` is unused.
+
 **Content authoring:** Pages can be `.md`, `.mdx` (MDX = Markdown + JSX), or `.tsx`. MDX files can import and render React components inline.
 
-**Theming:** Docusaurus uses the Infima CSS framework. Override CSS variables in `custom.css` under `:root` (light) and `[data-theme='dark']` (dark). To override built-in Docusaurus components, use `npm run swizzle`.
+**Theming:** Uses Infima CSS framework. Design tokens are CSS custom properties prefixed `--port-*` in `custom.css`. Override under `:root` (light) and `[data-theme='dark']` (dark). To override built-in Docusaurus components, use `npm run swizzle`.

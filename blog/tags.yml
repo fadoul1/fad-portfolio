@@ -1,19 +1,24 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+csharp:
+  label: C#
+  permalink: /csharp
+  description: Articles about C# programming
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+ddd:
+  label: DDD
+  permalink: /ddd
+  description: Domain-Driven Design patterns and practices
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+architecture:
+  label: Architecture
+  permalink: /architecture
+  description: Software architecture and design patterns
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+dotnet:
+  label: .NET
+  permalink: /dotnet
+  description: .NET ecosystem articles
+
+clean-code:
+  label: Clean Code
+  permalink: /clean-code
+  description: Clean code principles and practices

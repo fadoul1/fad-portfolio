@@ -1,30 +1,161 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
+/* ─── Design Tokens ─────────────────────────────────────────── */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #4f8ef7;
+  --ifm-color-primary-dark: #2e74f5;
+  --ifm-color-primary-darker: #1d68f4;
+  --ifm-color-primary-darkest: #0a52d8;
+  --ifm-color-primary-light: #70a4f9;
+  --ifm-color-primary-lighter: #81aef9;
+  --ifm-color-primary-lightest: #b3ccfc;
+
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-line-height-base: 1.7;
+  --ifm-navbar-height: 64px;
+
+  --port-bg: #f8faff;
+  --port-surface: #ffffff;
+  --port-border: #e8edf5;
+  --port-text-muted: #6b7280;
+  --port-accent: #4f8ef7;
+  --port-accent-glow: rgba(79, 142, 247, 0.15);
+  --port-gradient: linear-gradient(135deg, #4f8ef7 0%, #7c3aed 100%);
+  --port-card-shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
+  --port-card-shadow-hover: 0 8px 32px rgba(79,142,247,.18);
+  --port-radius: 12px;
+  --port-radius-sm: 8px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b8ef8;
+  --ifm-color-primary-darker: #2882f7;
+  --ifm-color-primary-darkest: #0a68f0;
+  --ifm-color-primary-light: #85bbfb;
+  --ifm-color-primary-lighter: #98c6fc;
+  --ifm-color-primary-lightest: #cce0fd;
+
+  --ifm-background-color: #0d1117;
+  --ifm-background-surface-color: #161b22;
+
+  --port-bg: #0d1117;
+  --port-surface: #161b22;
+  --port-border: #30363d;
+  --port-text-muted: #8b949e;
+  --port-accent: #60a5fa;
+  --port-accent-glow: rgba(96, 165, 250, 0.12);
+  --port-gradient: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  --port-card-shadow: 0 1px 3px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.3);
+  --port-card-shadow-hover: 0 8px 32px rgba(96,165,250,.2);
+}
+
+/* ─── Google Fonts ──────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ─── Global ────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--port-bg);
+}
+
+/* ─── Navbar ────────────────────────────────────────────────── */
+.navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(var(--ifm-background-color-rgb, 13, 17, 23), 0.85);
+  border-bottom: 1px solid var(--port-border);
+  box-shadow: none;
+}
+
+.navbar__title {
+  font-weight: 800;
+  background: var(--port-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-github-link::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%238b949e' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat center;
+}
+
+[data-theme='dark'] .navbar-github-link::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23e6edf3' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E");
+}
+
+/* ─── Shared Portfolio Components ───────────────────────────── */
+.port-section {
+  padding: 80px 0;
+}
+
+.port-section-alt {
+  background: var(--port-surface);
+}
+
+.port-section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: var(--port-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.port-section-subtitle {
+  color: var(--port-text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 3rem;
+}
+
+.port-card {
+  background: var(--port-surface);
+  border: 1px solid var(--port-border);
+  border-radius: var(--port-radius);
+  padding: 1.75rem;
+  box-shadow: var(--port-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.port-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--port-card-shadow-hover);
+  border-color: var(--port-accent);
+}
+
+.port-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--port-accent-glow);
+  color: var(--port-accent);
+  border: 1px solid color-mix(in srgb, var(--port-accent) 30%, transparent);
+}
+
+.port-tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--port-accent-glow);
+  color: var(--port-accent);
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* ─── Footer ────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--port-border);
 }

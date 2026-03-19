@@ -1,0 +1,206 @@
+.hero {
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 40%, var(--port-accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin: 0 0 1rem;
+  background: var(--port-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.heroSub {
+  font-size: 1.1rem;
+  color: var(--port-text-muted);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ─── Timeline ──────────────────────────────────────────────── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.timelineLine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+}
+
+.timelineDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--port-gradient);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px var(--port-accent-glow);
+}
+
+.timelineTrack {
+  flex: 1;
+  width: 2px;
+  background: var(--port-border);
+  margin-top: 6px;
+  min-height: 40px;
+}
+
+.timelineContent {
+  padding-bottom: 0.5rem;
+}
+
+/* ─── Role Card ─────────────────────────────────────────────── */
+.roleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.roleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.roleTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+}
+
+.roleMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--port-text-muted);
+  flex-wrap: wrap;
+}
+
+.dot {
+  opacity: 0.4;
+}
+
+.roleType {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.rolePeriod {
+  font-size: 0.85rem;
+  color: var(--port-text-muted);
+  font-family: var(--ifm-font-family-monospace);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.roleSummary {
+  font-size: 0.92rem;
+  color: var(--port-text-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+
+.achievements {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.achievements li {
+  font-size: 0.88rem;
+  color: var(--port-text-muted);
+  line-height: 1.55;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ─── Education / Certs ─────────────────────────────────────── */
+.eduGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+@media (max-width: 768px) {
+  .eduGrid { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+.eduCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.eduDegree {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.eduMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--port-text-muted);
+}
+
+.eduNotes {
+  font-size: 0.88rem;
+  color: var(--port-text-muted);
+  margin: 0;
+}
+
+.certCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.certIcon { font-size: 1.5rem; flex-shrink: 0; }
+
+.certName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.certMeta {
+  font-size: 0.82rem;
+  color: var(--port-text-muted);
+  margin-top: 0.15rem;
+}
