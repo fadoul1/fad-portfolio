@@ -8,7 +8,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://fadoul1.github.io',
-  baseUrl: '/',
+  baseUrl: '/fad-portfolio/',
 
   organizationName: 'fadoul1',
   projectName: 'fad-portfolio',
